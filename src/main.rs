@@ -1,10 +1,14 @@
 mod Problema2;
-
+mod Problema3;
 fn main() -> std::process::ExitCode {
     let args: Vec<String> = std::env::args().skip(1).collect();
     match args.as_slice() {
         [p] if matches!(p.as_str(), "2" | "Problema2") => {
             Problema2::ejecutar();
+            std::process::ExitCode::SUCCESS
+        }
+        [p] if matches!(p.as_str(), "3" | "Problema3") => {
+            Problema3::ejecutar();
             std::process::ExitCode::SUCCESS
         }
         [] => {
