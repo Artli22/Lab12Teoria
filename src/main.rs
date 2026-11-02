@@ -1,5 +1,6 @@
 mod Problema2;
 mod Problema3;
+mod Problema4;
 fn main() -> std::process::ExitCode {
     let args: Vec<String> = std::env::args().skip(1).collect();
     match args.as_slice() {
@@ -11,6 +12,10 @@ fn main() -> std::process::ExitCode {
             Problema3::ejecutar();
             std::process::ExitCode::SUCCESS
         }
+        [p] if matches!(p.as_str(), "4" | "Problema4") => {
+            Problema4::ejecutar();
+            std::process::ExitCode::SUCCESS
+        }  
         [] => {
             println!(
                 "Uso: cargo run -- Problema2 | Problema3 | Problema4 (también acepta 2 | 3 | 4)"
