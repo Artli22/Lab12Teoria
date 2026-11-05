@@ -1,19 +1,22 @@
-mod Problema2;
-mod Problema3;
-mod Problema4;
+#[path = "Problema2.rs"]
+mod problema2;
+#[path = "Problema3.rs"]
+mod problema3;
+#[path = "Problema4.rs"]
+mod problema4;
 fn main() -> std::process::ExitCode {
     let args: Vec<String> = std::env::args().skip(1).collect();
     match args.as_slice() {
         [p] if matches!(p.as_str(), "2" | "Problema2") => {
-            Problema2::ejecutar();
+            problema2::ejecutar();
             std::process::ExitCode::SUCCESS
         }
         [p] if matches!(p.as_str(), "3" | "Problema3") => {
-            Problema3::ejecutar();
+            problema3::ejecutar();
             std::process::ExitCode::SUCCESS
         }
         [p] if matches!(p.as_str(), "4" | "Problema4") => {
-            Problema4::ejecutar();
+            problema4::ejecutar();
             std::process::ExitCode::SUCCESS
         }  
         [] => {
